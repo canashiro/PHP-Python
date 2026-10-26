@@ -1,0 +1,17 @@
+```php
+<!--include /text/header.html-->
+
+<!--getenv HTTP_USER_AGENT-->
+<!--ifsubstr $exec_result Mozilla-->
+  Olá, você está usando o Netscape!<p>
+<!--endif-->
+
+<!--sql database select * from table where user='$username'-->
+<!--ifless $numentries 1-->
+  Desculpe, esse registro não existe<p>
+<!--endif exit-->
+  Boas-vindas, <!--$user-->!<p>
+  Você ainda tem <!--$index:0--> créditos na sua conta.<p>
+
+<!--include /text/footer.html-->
+`` 
